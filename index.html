@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerçek Zamanlı Görev Yönetim Uygulaması</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Görev Yönetim Uygulaması</h1>
+        
+        <!-- Görev Ekleme Formu -->
+        <div class="form-container">
+            <h2>Yeni Görev Ekle</h2>
+            <div id="error-message" class="error-message"></div>
+            <form id="task-form">
+                <div class="form-group">
+                    <label for="title">Başlık (Zorunlu):</label>
+                    <input type="text" id="title" name="title" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="description">Açıklama (Opsiyonel):</label>
+                    <textarea id="description" name="description"></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label>Öncelik:</label>
+                    <div class="priority-options">
+                        <label>
+                            <input type="radio" name="priority" value="düşük"> Düşük
+                        </label>
+                        <label>
+                            <input type="radio" name="priority" value="orta"> Orta
+                        </label>
+                        <label>
+                            <input type="radio" name="priority" value="yüksek"> Yüksek
+                        </label>
+                    </div>
+                </div>
+                
+                <button type="submit" class="btn-add">Ekle</button>
+            </form>
+        </div>
+        
+        <!-- Filtreleme ve Sıralama -->
+        <div class="filter-container">
+            <button id="show-completed" class="filter-btn">Sadece tamamlananları göster</button>
+            <button id="show-all" class="filter-btn">Tümünü göster</button>
+            <div class="sort-container">
+                <label>Sıralama:</label>
+                <select id="sort-priority">
+                    <option value="none">Sıralama yok</option>
+                    <option value="low-to-high">Öncelik: Düşük → Yüksek</option>
+                    <option value="high-to-low">Öncelik: Yüksek → Düşük</option>
+                </select>
+            </div>
+        </div>
+        
+        <!-- Görev Listesi -->
+        <div class="task-list-container">
+            <h2>Görev Listesi</h2>
+            <ul id="task-list" class="task-list">
+                <!-- Görevler JavaScript ile buraya eklenecek -->
+            </ul>
+            <div id="empty-list-message" class="empty-list-message">
+                Henüz görev eklenmemiş. Yukarıdaki formu kullanarak yeni görev ekleyebilirsiniz.
+            </div>
+        </div>
+    </div>
+    
+    <script src="app.js"></script>
+</body>
+</html>
